@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+@import url('https://fonts.googleapis.com/css?family=Lilita One');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .stroke-black-2 {
+    text-shadow: -2px -2px 0 #36454F, 2px -2px 0 #36454F, -2px 2px 0 #36454F, 2px 2px 0 #36454F;
+  }
+  .stroke-black-3 {
+    text-shadow: -3px -3px 0 #36454F, 3px -3px 0 #36454F, -3px 3px 0 #36454F, 3px 3px 0 #36454F;
+  }
+}
+
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
