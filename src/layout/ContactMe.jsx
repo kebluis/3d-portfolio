@@ -1,8 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { motion } from "framer-motion";
 import React from "react";
-import emailjs from "@emailjs/browser"
-
+import emailjs from "@emailjs/browser";
 
 const ContactMe = () => {
   return (
@@ -27,9 +26,14 @@ const ContactMe = () => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           emailjs
-            .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, values ,import.meta.env.VITE_PUBLIC_ID)
+            .send(
+              import.meta.env.VITE_SERVICE_ID,
+              import.meta.env.VITE_TEMPLATE_ID,
+              values,
+              import.meta.env.VITE_PUBLIC_ID
+            )
             .then(
               function (response) {
                 console.log("SUCCESS!", response.status, response.text);
@@ -38,7 +42,10 @@ const ContactMe = () => {
                 console.log("FAILED...", error);
               }
             )
-            .finally(() => setSubmitting(false));
+            .finally(() => {
+              setSubmitting(false);
+              resetForm();
+            });
         }}
       >
         {({ isSubmitting }) => {
