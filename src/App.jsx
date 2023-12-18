@@ -10,7 +10,8 @@ import Contents from "./layout/Contents";
 import Avatar from "./models/Avatar";
 import Bird from "./models/Bird";
 import Room from "./models/Rooms";
-import { ScrollState } from "./store/ScrollContext";
+import { PortfolioState } from "./store/PortfolioContext";
+import EmailSentModal from "./components/emailSentModal";
 
 
 const Container = styled.div`
@@ -19,10 +20,11 @@ const Container = styled.div`
 
 function App() {
   return (
-    <ScrollState>
+    <PortfolioState>
       <Container>
         <Navigation />
         <Introduction />
+        <EmailSentModal />
         <Canvas>
           <PerspectiveCamera position={[0.5, -2.8, 4]}>
             <ambientLight intensity={2} />
@@ -49,7 +51,7 @@ function App() {
           </PerspectiveCamera>
         </Canvas>
       </Container>
-    </ScrollState>
+    </PortfolioState>
   );
 }
 

@@ -2,10 +2,10 @@ import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useContext, useEffect, useRef } from "react";
-import { ScrollContext } from "../store/ScrollContext";
+import { PortfolioContext } from "../store/PortfolioContext";
 
 const ScrollManager = () => {
-  const { scrollY, recordScrollY } = useContext(ScrollContext);
+  const { scrollY, recordScrollY } = useContext(PortfolioContext);
 
   const data = useScroll();
   const lastScroll = useRef(0);

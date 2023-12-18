@@ -1,6 +1,6 @@
 import { Scroll } from "@react-three/drei";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import gamesImg from "../assets/images/games.png";
 import githubImg from "../assets/images/github.png";
 import musicImg from "../assets/images/music.png";
@@ -10,12 +10,12 @@ import NameHeader from "../components/NameHeader";
 import Section from "../components/Section";
 import TechSkills from "./TechSkills";
 import TransferableSkills from "./TransferableSkills";
+import { PortfolioContext } from "../store/PortfolioContext";
 
 const Contents = () => {
-  
-
+  const {changeIsSent, changeIsSubmitted} = useContext(PortfolioContext)
   return (
-    <Scroll html >
+    <Scroll html>
       <div className="m-32 font-header">
         <Section>
           <NameHeader />
@@ -49,7 +49,9 @@ const Contents = () => {
             }}
             className="rounded-lg bg-white p-8 opacity-80 block"
           >
-            <ContactMe />
+            <ContactMe 
+            changeIsSent={changeIsSent}
+            changeIsSubmitted={changeIsSubmitted}/>
           </motion.div>
         </Section>
       </div>

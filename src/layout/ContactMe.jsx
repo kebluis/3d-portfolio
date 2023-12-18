@@ -1,9 +1,10 @@
+import emailjs from "@emailjs/browser";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { motion } from "framer-motion";
 import React from "react";
-import emailjs from "@emailjs/browser";
 
-const ContactMe = () => {
+const ContactMe = ({ changeIsSubmitted, changeIsSent }) => {
+
   return (
     <div className="block">
       <h1 className="text-4xl stroke-black-2 text-white">Reach Out</h1>
@@ -27,6 +28,7 @@ const ContactMe = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting, resetForm }) => {
+          changeIsSubmitted(true);
           emailjs
             .send(
               import.meta.env.VITE_SERVICE_ID,
@@ -36,15 +38,20 @@ const ContactMe = () => {
             )
             .then(
               function (response) {
+                changeIsSent(true);
                 console.log("SUCCESS!", response.status, response.text);
               },
               function (error) {
                 console.log("FAILED...", error);
               }
             )
-            .finally(() => {
+            .finally(async () => {
               setSubmitting(false);
               resetForm();
+              await setTimeout(() => {
+                changeIsSubmitted(false);
+                changeIsSent(false);
+              }, 2000);
             });
         }}
       >
