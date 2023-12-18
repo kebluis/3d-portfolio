@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Physics, RigidBody } from "@react-three/rapier";
 import styled from "styled-components";
 import "./App.css";
+import EmailSentModal from "./components/EmailSentModal";
 import Introduction from "./components/Introduction";
 import Navigation from "./components/Navigation";
 import ScrollManager from "./components/ScrollManager";
@@ -11,7 +12,6 @@ import Avatar from "./models/Avatar";
 import Bird from "./models/Bird";
 import Room from "./models/Rooms";
 import { PortfolioState } from "./store/PortfolioContext";
-import EmailSentModal from "./components/emailSentModal";
 
 
 const Container = styled.div`

@@ -1,6 +1,5 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { motion } from "framer-motion";
-import { useControls } from "leva";
 import React, { useContext } from "react";
 import { PortfolioContext } from "../store/PortfolioContext";
 
