@@ -4,7 +4,7 @@ import FitnessCenter from "@mui/icons-material/FitnessCenter";
 import { motion } from "framer-motion";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { ScrollContext } from "../store/scrollContext";
+import { ScrollContext } from "../store/ScrollContext";
 import NavButton from "./NavButton";
 
 const NavCircle = styled(motion.div)`

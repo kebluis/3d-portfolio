@@ -2,7 +2,7 @@ import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useContext, useEffect, useRef } from "react";
-import { ScrollContext } from "../store/scrollContext";
+import { ScrollContext } from "../store/ScrollContext";
 
 const ScrollManager = () => {
   const { scrollY, recordScrollY } = useContext(ScrollContext);

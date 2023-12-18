@@ -10,7 +10,8 @@ import Contents from "./layout/Contents";
 import Avatar from "./models/Avatar";
 import Bird from "./models/Bird";
 import Room from "./models/Rooms";
-import { ScrollState } from "./store/scrollContext";
+import { ScrollState } from "./store/ScrollContext";
+
 
 const Container = styled.div`
   height: ${window.innerHeight}px;
